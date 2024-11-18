@@ -1,1 +1,0 @@
-print("tôi yêu Bách Khoa")
