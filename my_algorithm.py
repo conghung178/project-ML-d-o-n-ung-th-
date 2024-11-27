@@ -1,8 +1,15 @@
-def algorithm(model):
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import make_scorer, f1_score
+
+def algorithm(model, X_train, y_train, X_test, y_test, Accuracy):
   model.fit(X_train, y_train) # huấn luyện mô hình
   prediction = model.predict(X_test) # dự đoán nhãn của tập X_test
-
-  accuracy = accuracy_score(y_test,prediction) # tính toán độ chính xác, so sánh nhãn thực tế với nhãn dự đoán --> trả về tỷ lệ
 
   # In ra ma trận nhầm lẫn
   print('confusion matrix')
